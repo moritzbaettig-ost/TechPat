@@ -4,7 +4,7 @@ import ipdb
 import numpy as np
 from sklearn.datasets import make_blobs
 import logging
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.WARNING)
 import os
 EMBEDDING_SIZE = int(os.environ.get('EMBEDDING_SIZE'))
 CPC_CLUSTER_MIN_NUM = int(os.environ.get('CPC_CLUSTER_MIN_NUM'))

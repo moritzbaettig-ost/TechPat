@@ -6,7 +6,7 @@ import ipdb
 import numpy as np
 from tqdm import tqdm
 import logging
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.WARNING)
 import os
 TOTAL_NUMBER = int(os.environ.get('TOTAL_NUMBER'))
 TITLE_CLUSTER_MIN_NUM = int(os.environ.get('TITLE_CLUSTER_MIN_NUM'))

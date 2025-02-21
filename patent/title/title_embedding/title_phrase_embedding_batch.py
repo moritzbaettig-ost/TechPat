@@ -8,7 +8,7 @@ import pickle
 from tqdm import tqdm
 from ollama import Client, EmbedResponse
 import logging
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.WARNING)
 import os
 TOTAL_NUMBER = int(os.environ.get('TOTAL_NUMBER'))
 EMBEDDING_SIZE = int(os.environ.get('EMBEDDING_SIZE'))

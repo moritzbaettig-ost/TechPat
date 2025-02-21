@@ -57,7 +57,7 @@ def getLogger(name='', file_handler=file_handler, stream_handler=stream_handler)
     logger.propagate = False
 
     # logger.error('starting') # starting logging
-    logger.setLevel(logging.DEBUG)
+    logger.setLevel(logging.WARNING)
     return logger
 
 

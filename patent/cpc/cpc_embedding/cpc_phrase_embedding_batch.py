@@ -6,7 +6,7 @@ from gensim.models.word2vec import LineSentence
 import ipdb
 import pickle
 import logging
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.WARNING)
 import os
 from tqdm import tqdm
 from ollama import Client, EmbedResponse
