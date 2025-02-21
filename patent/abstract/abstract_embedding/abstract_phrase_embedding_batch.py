@@ -6,7 +6,7 @@ from gensim.models.word2vec import LineSentence
 import ipdb
 import pickle
 from tqdm import tqdm
-from ollama import Client
+from ollama import Client, EmbedResponse
 import logging
 logging.basicConfig(level=logging.DEBUG)
 import os
@@ -63,7 +63,8 @@ def batch_bert_phrase_embedding(cpc_embedding_file, title_phrase_file, output_fi
     batched_keys = cut_list(added_keys, batch_size)
 
     for batch in tqdm(batched_keys, total=len(batched_keys)):
-        batch_embedding = client.embed(model='nomic-embed-text', input=batch)
+        res: EmbedResponse = client.embed(model='nomic-embed-text', input=batch)
+        batch_embedding = res.embeddings
         for idx in range(len(batch)):
             phrase_embedding[batch[idx]] = batch_embedding[idx]
     

@@ -9,7 +9,7 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 import os
 from tqdm import tqdm
-from ollama import Client
+from ollama import Client, EmbedResponse
 EMBEDDING_SIZE = int(os.environ.get('EMBEDDING_SIZE'))
 EMBEDDING_BATCH = int(os.environ.get('EMBEDDING_BATCH'))
 OLLAMA_URI = os.environ.get('OLLAMA_URI')
@@ -54,7 +54,8 @@ def batch_bert_phrase_embedding(cpc_phrase_file, output_file, batch_size=EMBEDDI
     batched_keys = cut_list(phrase_embedding_keys, batch_size)
 
     for batch in tqdm(batched_keys, total=len(batched_keys)):
-        batch_embedding = client.embed(model='nomic-embed-text', input=batch)
+        res : EmbedResponse = client.embed(model='nomic-embed-text', input=batch)
+        batch_embedding = res.embeddings
         for idx in range(len(batch)):
             phrase_embedding[batch[idx]] = batch_embedding[idx]
 
