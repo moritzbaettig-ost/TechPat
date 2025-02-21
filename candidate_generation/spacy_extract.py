@@ -32,8 +32,8 @@ class WhitespaceTokenizer_spacy(object):
         return Doc(self.vocab, words=words, spaces=spaces)
 
 
-_NLP = spacy.load('en')
-_NLP_backup = spacy.load('en')
+_NLP = spacy.load('en_core_web_sm')
+_NLP_backup = spacy.load('en_core_web_sm')
 _NLP.tokenizer = WhitespaceTokenizer_spacy(_NLP.vocab)
 
 

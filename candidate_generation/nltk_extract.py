@@ -13,7 +13,7 @@ log = getLogger(os.path.basename(__file__))
 
 VALIDATE = True
 
-
+nltk.download('averaged_perceptron_tagger_eng')
 
 # get minimal
 # get maximal

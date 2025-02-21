@@ -206,7 +206,7 @@ def remove_non_tail_span(superspan_list):
     return new_superspan_list
 
 
-_nlp = spacy.load('en')
+_nlp = spacy.load('en_core_web_sm')
 
 
 def filter_span_data_by_grammar(data, texts):
