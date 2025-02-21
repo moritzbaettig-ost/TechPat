@@ -9,9 +9,10 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 import os
 from tqdm import tqdm
-from bert_serving.client import BertClient
+from ollama import Client
 EMBEDDING_SIZE = int(os.environ.get('EMBEDDING_SIZE'))
 EMBEDDING_BATCH = int(os.environ.get('EMBEDDING_BATCH'))
+OLLAMA_URI = os.environ.get('OLLAMA_URI')
 
 def save_obj(obj, name):
     with open(name, 'wb') as f:
@@ -40,7 +41,7 @@ def cut_list(lists, cut_len):
 
 
 def batch_bert_phrase_embedding(cpc_phrase_file, output_file, batch_size=EMBEDDING_BATCH):
-    bc = BertClient(port=7777, port_out=7778)
+    client = Client(host=OLLAMA_URI)
     phrase_embedding = {}
     phrase_embedding_keys = []
     with open(cpc_phrase_file, 'r', encoding='utf-8') as f_in:
@@ -53,7 +54,7 @@ def batch_bert_phrase_embedding(cpc_phrase_file, output_file, batch_size=EMBEDDI
     batched_keys = cut_list(phrase_embedding_keys, batch_size)
 
     for batch in tqdm(batched_keys, total=len(batched_keys)):
-        batch_embedding = bc.encode(batch)
+        batch_embedding = client.embed(model='nomic-embed-text', input=batch)
         for idx in range(len(batch)):
             phrase_embedding[batch[idx]] = batch_embedding[idx]
 

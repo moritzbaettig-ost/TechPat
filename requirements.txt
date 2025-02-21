@@ -1,5 +1,4 @@
-bert_serving_client
-bert_serving_server
+ollama
 gensim
 hdbscan
 ipdb

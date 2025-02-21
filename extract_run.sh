@@ -10,6 +10,7 @@ export TITLE_SUPERGRAPH_CLUSTER=3
 export ABSTRACT_SUPERGRAPH_CLUSTER=3
 export CLAIM_SUPERGRAPH_CLUSTER=3
 export EMBEDDING_BATCH=128
+export OLLAMA_URI=http://localhost:11434
 
 venv/bin/python patent/cpc/cpc_phrase_list/cpc_phrase_list.py
 venv/bin/python patent/cpc/cpc_embedding/cpc_phrase_embedding_batch.py
