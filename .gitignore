@@ -4,3 +4,5 @@ __pycache__
 example_data
 venv
 .idea
+*.json
+*.pkl
