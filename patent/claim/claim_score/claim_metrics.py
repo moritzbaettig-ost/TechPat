@@ -102,12 +102,7 @@ def supergraph_independence(node, node_idx, node_embedding, subgraph_idx, subgra
             if avg_item == subgraph_idx:
                 continue
             else:
-                temp = 1
-                try:
-                    temp = cosine(node_embedding, subgraph_avg_dic[avg_item])
-                except:
-                    #print('cosine error')
-                    pass
+                temp = cosine(np.ravel(node_embedding), np.array([subgraph_avg_dic[avg_item]]))
                 if temp < global_independence:
                     global_independence = temp
     return ALPHA*local_independence + (1-ALPHA)*global_independence
@@ -129,12 +124,7 @@ def supergraph_relation(node, node_idx, node_embedding, subgraph_idx, subgraph_a
             if avg_item == subgraph_idx:
                 continue
             else:
-                temp = 1
-                try:
-                    temp = cosine(node_embedding, subgraph_avg_dic[avg_item])
-                except:
-                    #print('cosine error')
-                    pass
+                temp = cosine(np.ravel(node_embedding), np.array([subgraph_avg_dic[avg_item]]))
                 if temp < BASIC_THRESHOLD:
                     global_realtion_count = global_realtion_count + 1
         global_relation = float(global_realtion_count) / float(len(subgraph_avg_dic)-1)
