@@ -39,7 +39,7 @@ def build_graph(super_sapn_file, phrase_embedding_file, output_supergraph_file):
             temp_node = j.lower()
             if temp_node != '' and temp_node not in graph:
                 if temp_node in phrase_embedding:
-                    if not np.all(phrase_embedding[key_phrase] == 0.0):
+                    if not np.all(phrase_embedding[temp_node] == 0.0):
                         graph[temp_node] = count
                         count = count + 1
                         graph_embedding.append(phrase_embedding[temp_node])
