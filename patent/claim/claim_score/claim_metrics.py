@@ -102,7 +102,7 @@ def supergraph_independence(node, node_idx, node_embedding, subgraph_idx, subgra
             if avg_item == subgraph_idx:
                 continue
             else:
-                temp = cosine(np.ravel(node_embedding), np.array([subgraph_avg_dic[avg_item]]))
+                temp = cosine(node_embedding, subgraph_avg_dic[avg_item])
                 if temp < global_independence:
                     global_independence = temp
     return ALPHA*local_independence + (1-ALPHA)*global_independence
@@ -124,7 +124,7 @@ def supergraph_relation(node, node_idx, node_embedding, subgraph_idx, subgraph_a
             if avg_item == subgraph_idx:
                 continue
             else:
-                temp = cosine(np.ravel(node_embedding), np.array([subgraph_avg_dic[avg_item]]))
+                temp = cosine(node_embedding, subgraph_avg_dic[avg_item])
                 if temp < BASIC_THRESHOLD:
                     global_realtion_count = global_realtion_count + 1
         global_relation = float(global_realtion_count) / float(len(subgraph_avg_dic)-1)
@@ -236,7 +236,7 @@ def calculate_score(supergraph_list_file, lower_text_file, last_level_file,
             for subgraph_item in subgraph:
                 subgraph_embedding_dic[subgraph_idx].append(phrase_embedding[subgraph_item])
         for subgraph_idx in subgraph_dic:
-            subgraph_avg_dic[subgraph_idx] = np.average(subgraph_embedding_dic[subgraph_idx])
+            subgraph_avg_dic[subgraph_idx] = np.average(subgraph_embedding_dic[subgraph_idx], axis=0)
         for subgraph_idx in subgraph_dic:
             temp_matrix = pdist(subgraph_embedding_dic[subgraph_idx], metric='cosine')
             subgraph_distance_matrix[subgraph_idx] = squareform(temp_matrix)
