@@ -38,11 +38,11 @@ venv/bin/python patent/abstract/abstract_clustering/abstract_clustering.py
 
 venv/bin/python patent/claim/claim_candidate/candidate_synthesis.py
 venv/bin/python patent/claim/claim_embedding/claim_phrase_embedding_batch.py
-python patent/claim/claim_graph/construct_graph.py
-python patent/claim/claim_score/claim_metrics.py
-python patent/claim/claim_score/claim_score_normalize.py
-python patent/claim/claim_rank/claim_rank.py
-python patent/claim/claim_rank/claim_to_text.py
-python patent/claim/claim_rank/claim_selection.py
+venv/bin/python patent/claim/claim_graph/construct_graph.py
+venv/bin/python patent/claim/claim_score/claim_metrics.py
+venv/bin/python patent/claim/claim_score/claim_score_normalize.py
+venv/bin/python patent/claim/claim_rank/claim_rank.py
+venv/bin/python patent/claim/claim_rank/claim_to_text.py
+venv/bin/python patent/claim/claim_rank/claim_selection.py
 
-python result/select_phrase.py
+venv/bin/python result/select_phrase.py
