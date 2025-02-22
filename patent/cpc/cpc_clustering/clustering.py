@@ -9,6 +9,9 @@ import os
 EMBEDDING_SIZE = int(os.environ.get('EMBEDDING_SIZE'))
 CPC_CLUSTER_MIN_NUM = int(os.environ.get('CPC_CLUSTER_MIN_NUM'))
 
+from warnings import simplefilter
+simplefilter(action='ignore', category=FutureWarning)
+
 
 def save_obj(obj, name):
     with open(name, 'wb') as f:
