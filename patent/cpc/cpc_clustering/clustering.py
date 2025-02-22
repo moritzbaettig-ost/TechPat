@@ -46,7 +46,7 @@ def calculate_centroid(groudtruth_file, phrase_embedding_file, centroids_file):
     embedding_table = load_obj(phrase_embedding_file)
     for i in groudtruth:
         if i != '':
-            if not search_phrase_embedding(i, embedding_table) == 0.0:
+            if not np.all(search_phrase_embedding(i, embedding_table) == 0.0):
                 processed_data.append(search_phrase_embedding(i, embedding_table))
             else:
                 print('zero embedding phrase: ' + i)

@@ -41,7 +41,7 @@ def title_centroid(ranked_phrase_file, cpc_title_phrase_embedding_file, output_f
                     print('There is an error: cannot find: ' + key_phrase)
                     ipdb.set_trace()
                 else:
-                    if not phrase_embedding[key_phrase] == 0.0:
+                    if not np.all(phrase_embedding[key_phrase] == 0.0):
                         process_data.append(phrase_embedding[key_phrase])
                     else:
                         print('count: ' + str(zero_count) + 'zero embedding phrase: ' + key_phrase)
