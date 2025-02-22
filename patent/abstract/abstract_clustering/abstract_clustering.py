@@ -11,6 +11,9 @@ import os
 TOTAL_NUMBER = int(os.environ.get('TOTAL_NUMBER'))
 ABSTRACT_CLUSTER_MIN_NUM = int(os.environ.get('ABSTRACT_CLUSTER_MIN_NUM'))
 
+from warnings import simplefilter
+simplefilter(action='ignore', category=FutureWarning)
+
 
 def save_obj(obj, name):
     with open(name, 'wb') as f:

@@ -2,6 +2,8 @@ import pickle
 import json
 from tqdm import tqdm
 
+from warnings import simplefilter
+simplefilter(action='ignore', category=FutureWarning)
 
 def save_obj(obj, name):
     with open(name, 'wb') as f:

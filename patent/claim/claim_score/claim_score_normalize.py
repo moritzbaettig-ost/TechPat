@@ -11,6 +11,9 @@ TOTAL_NUMBER = int(os.environ.get('TOTAL_NUMBER'))
 from warnings import simplefilter
 simplefilter(action='ignore', category=FutureWarning)
 
+from warnings import simplefilter
+simplefilter(action='ignore', category=FutureWarning)
+
 def save_obj(obj, name):
     with open(name, 'wb') as f:
         pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)

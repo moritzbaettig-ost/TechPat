@@ -3,6 +3,9 @@ from tqdm import tqdm
 import os
 TOTAL_NUMBER = int(os.environ.get('TOTAL_NUMBER'))
 
+from warnings import simplefilter
+simplefilter(action='ignore', category=FutureWarning)
+
 
 def candidate_synthesis(original_candidate_file, output_file):
     with open(original_candidate_file, 'r', encoding='utf-8') as f_in:

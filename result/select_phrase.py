@@ -2,6 +2,9 @@ from nltk.tokenize import sent_tokenize
 import json
 import re
 
+from warnings import simplefilter
+simplefilter(action='ignore', category=FutureWarning)
+
 title_path = 'example_data/example_title/title.txt'
 abstract_path = 'example_data/example_abstract/abstract.txt'
 claim_path = 'example_data/example_claim/claim.txt'

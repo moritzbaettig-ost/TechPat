@@ -8,6 +8,9 @@ import os
 TOTAL_NUMBER = int(os.environ.get('TOTAL_NUMBER'))
 CLAIM_SUPERGRAPH_CLUSTER = int(os.environ.get('CLAIM_SUPERGRAPH_CLUSTER'))
 
+from warnings import simplefilter
+simplefilter(action='ignore', category=FutureWarning)
+
 def save_obj(obj, name):
     with open(name, 'wb') as f:
         pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)

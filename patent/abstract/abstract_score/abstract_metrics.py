@@ -9,6 +9,8 @@ import os
 TOTAL_NUMBER = int(os.environ.get('TOTAL_NUMBER'))
 EMBEDDING_SIZE = int(os.environ.get('EMBEDDING_SIZE'))
 
+from warnings import simplefilter
+simplefilter(action='ignore', category=FutureWarning)
 
 BASIC_THRESHOLD = 0.5
 ALPHA = 0.5

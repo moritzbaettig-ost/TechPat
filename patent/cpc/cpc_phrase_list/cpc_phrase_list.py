@@ -1,5 +1,8 @@
 import json
 
+from warnings import simplefilter
+simplefilter(action='ignore', category=FutureWarning)
+
 
 def cpc2list(cpc_phrase_file, output_file):
     output = []

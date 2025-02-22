@@ -2,6 +2,9 @@ from nltk.tokenize import sent_tokenize
 import json
 import re
 
+from warnings import simplefilter
+simplefilter(action='ignore', category=FutureWarning)
+
 title_path = 'example_data/example_title/title.txt'
 title_list_path = 'patent/title/title_rank/ranked_title_influence_phrase_score_text.json'
 

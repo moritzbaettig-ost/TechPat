@@ -14,6 +14,9 @@ EMBEDDING_SIZE = int(os.environ.get('EMBEDDING_SIZE'))
 EMBEDDING_BATCH = int(os.environ.get('EMBEDDING_BATCH'))
 OLLAMA_URI = os.environ.get('OLLAMA_URI')
 
+from warnings import simplefilter
+simplefilter(action='ignore', category=FutureWarning)
+
 def save_obj(obj, name):
     with open(name, 'wb') as f:
         pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)

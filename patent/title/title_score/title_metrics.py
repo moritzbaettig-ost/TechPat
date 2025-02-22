@@ -12,6 +12,9 @@ EMBEDDING_SIZE = int(os.environ.get('EMBEDDING_SIZE'))
 BASIC_THRESHOLD = 0.5
 ALPHA = 0.5
 
+from warnings import simplefilter
+simplefilter(action='ignore', category=FutureWarning)
+
 
 def save_obj(obj, name):
     with open(name, 'wb') as f:

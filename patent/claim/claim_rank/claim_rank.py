@@ -4,6 +4,9 @@ from tqdm import tqdm
 import pickle
 
 
+from warnings import simplefilter
+simplefilter(action='ignore', category=FutureWarning)
+
 def save_obj(obj, name):
     with open(name, 'wb') as f:
         pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)

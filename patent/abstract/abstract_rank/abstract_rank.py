@@ -3,6 +3,8 @@ from scipy.spatial.distance import pdist, squareform, cosine
 from tqdm import tqdm
 import pickle
 
+from warnings import simplefilter
+simplefilter(action='ignore', category=FutureWarning)
 
 def save_obj(obj, name):
     with open(name, 'wb') as f:
