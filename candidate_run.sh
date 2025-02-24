@@ -3,7 +3,7 @@ RAW_TITLE='example_data/example_title/title.txt'
 RAW_ABSTRACT='example_data/example_abstract/abstract.txt'
 RAW_CLAIM='example_data/example_claim/claim.txt'
 
-export TOTAL_NUMBER=20
+#export TOTAL_NUMBER=20
 
 #install dbpedia according to https://github.com/dbpedia-spotlight/spotlight-docker and change this
 #export DBPEDIA_PATH="$HOME/bin/spotlight-english"

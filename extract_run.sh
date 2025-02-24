@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # need to change the total number
-export TOTAL_NUMBER=20
+#export TOTAL_NUMBER=20
 export EMBEDDING_SIZE=768
 export CPC_CLUSTER_MIN_NUM=3
 export TITLE_CLUSTER_MIN_NUM=100
