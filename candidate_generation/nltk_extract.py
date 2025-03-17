@@ -49,8 +49,8 @@ def validate_nps(nps, words_original):
         token_span = words_original[st:ed]
         # 'A polynomial time algorithm for the Lambek calculus with brackets of  bounded order'
         if ' '.join(token_span).strip() != np['text'].strip():
-            print(' '.join(token_span))
-            print(np)
+            # print(' '.join(token_span))
+            # print(np)
             return validated_nps
         validated_nps.append(np)
     return nps
