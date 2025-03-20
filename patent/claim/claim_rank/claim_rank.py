@@ -39,6 +39,10 @@ class superNeGraph(object):
         overlapping = 0
         i_list = v_i.strip(' ')
         j_list = v_j.strip(' ')
+        if len(i_list) == 0 and len(j_list) == 0:
+            return 0
+        if len(j_list) == 0:
+            return 1
         for item in i_list:
             if item in j_list:
                 overlapping = overlapping + 1
